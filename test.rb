@@ -1,3 +1,7 @@
-require'./lib/services/open_ai_service'
+require'./lib/travel'
 
-p OpenAiService.new.call
+p Travel
+  .new
+  .with_dates(start_date,end_date)
+  .from(origin)
+  .to(destination)

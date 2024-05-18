@@ -1,5 +1,9 @@
 require 'sinatra'
 
-get '/' do
-  'Hello, world!'
+post '/plan' do
+  # params[:start_date]
+  # params[:end_date]
+  # params[:city_origin]
+  # params[:city_destination]
+
 end
