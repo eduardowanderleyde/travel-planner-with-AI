@@ -1,3 +1,3 @@
-require './lib/open_ai_service'
+require'./lib/services/open_ai_service'
 
 p OpenAiService.new.call
