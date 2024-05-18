@@ -1,5 +1,5 @@
 require'./lib/services/open_ai_service'
-
+require'./lib/utils/prompt_util'
 class Travel
   def with_dates(start_date,end_date)
     @start_date = start_date
@@ -17,8 +17,8 @@ class Travel
     self
   end 
 
-  def plan
-    travel_itinerary
+  def plan!
+    weather
   end
 
   private
@@ -28,6 +28,8 @@ class Travel
   end
 
   def weather
+    prompt = Utils::Prompt.weather_text(@start_date, @destination)
+    OpenAiService.new.call(prompt)
   end
 
   def violence_info
