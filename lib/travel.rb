@@ -1,17 +1,20 @@
-require'./services/open_ai_service'
+require'./lib/services/open_ai_service'
 
 class Travel
   def with_dates(start_date,end_date)
     @start_date = start_date
     @end_date = end_date
+    self
   end 
 
   def from(origin)
     @origin = origin
+    self
   end 
 
   def to(destination)
     @destination = destination
+    self
   end 
 
   def plan

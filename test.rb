@@ -2,6 +2,6 @@ require'./lib/travel'
 
 p Travel
   .new
-  .with_dates(start_date,end_date)
-  .from(origin)
-  .to(destination)
+  .with_dates("10/08/2024","15/08/2024")
+  .from("Macaé - RJ")
+  .to("Porto Alegre - RS")
