@@ -9,11 +9,12 @@ class OpenAiService
   end
 
   def call
-    @openai_client.chat(
+    response = @openai_client.chat(
       parameters:{
         model: "gpt-3.5-turbo",
         messages: [{role:"user", content: "Tell me a good movie to web developers!"}],
       }
     )
+    response.dig('choices', 0, 'message', 'content')
   end
 end
