@@ -18,7 +18,12 @@ class Travel
   end 
 
   def plan!
-    best_way
+    {
+      travel_itinerary: travel_itinerary,
+      weather: weather,
+      violence_info: violence_info,
+      best_way: best_way
+    }
   end
 
   private

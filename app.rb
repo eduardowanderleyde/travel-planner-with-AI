@@ -1,9 +1,12 @@
 require 'sinatra'
 
 post '/plan' do
-  # params[:start_date]
-  # params[:end_date]
-  # params[:city_origin]
-  # params[:city_destination]
+  response = Travel
+    .new
+    .with_dates(params[:start_date],params[:end_date])
+    .from(params[:city_origin])
+    .to(params[:city_destination])
+    .plan!
 
+  render json: response
 end
