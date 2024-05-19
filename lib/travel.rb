@@ -18,7 +18,7 @@ class Travel
   end 
 
   def plan!
-    weather
+    best_way
   end
 
   private
@@ -33,8 +33,12 @@ class Travel
   end
 
   def violence_info
+    prompt = Utils::Prompt.violence_text(@destination)
+    OpenAiService.new.call(prompt)
   end
 
   def best_way
+    prompt = Utils::Prompt.best_way_text(@origin,@destination)
+    OpenAiService.new.call(prompt)
   end
 end

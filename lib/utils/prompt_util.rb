@@ -5,7 +5,15 @@ module Utils
     end
 
     def self.weather_text(start_date, destination)
-      "Im traveling to #{destination} on #{start_date}. Based on historic events, how is the weather there?"
+      "Im traveling to #{destination} on #{start_date}. What is the weather like based on past data?"
+    end
+
+    def self.violence_text(destination)
+      "Im traveling to #{destination}. Based on past events, should I worry about security?"
+    end
+
+    def self.best_way_text(origin, destination)
+      "I live in #{origin},  What is the best way to go to #{destination}?"
     end
   end
 end
